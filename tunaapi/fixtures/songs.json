@@ -1,0 +1,32 @@
+[
+  {
+      "model": "tunaapi.song",
+      "pk": 1,
+      "fields": {
+          "title": "Careless Whisper",
+          "artist_id": 1,
+          "album": "Single",
+          "length": 3.13
+      }
+  },
+  {
+    "model": "tunaapi.song",
+    "pk": 2,
+    "fields": {
+        "title": "Love On Top",
+        "artist_id": 2,
+        "album": "Single",
+        "length": 4.02
+    }
+  },
+  {
+    "model": "tunaapi.song",
+    "pk": 3,
+    "fields": {
+        "title": "The Leper",
+        "artist_id": 3,
+        "album": "Single",
+        "length": 3.50
+    }
+  }
+]
