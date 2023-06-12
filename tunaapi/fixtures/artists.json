@@ -1,0 +1,29 @@
+[
+  {
+      "model": "tunaapi.artist",
+      "pk": 1,
+      "fields": {
+          "name": "George Michael",
+          "age": 55,
+          "bio": "gm"
+      }
+  },
+  {
+      "model": "tunaapi.artist",
+      "pk": 2,
+      "fields": {
+          "name": "Beyonce",
+          "age": 45,
+          "bio": "bee"
+      }
+  },
+  {
+      "model": "tunaapi.artist",
+      "pk": 3,
+      "fields": {
+          "name": "J Mascis",
+          "age": 59,
+          "bio": "hats"
+      }
+  }
+]
