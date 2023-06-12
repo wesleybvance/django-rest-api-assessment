@@ -2,10 +2,10 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from tunaapi.models import Artist
+from tunaapi.models import Artist, Song
 
 class ArtistView(ViewSet):
-    """Level up artist view"""
+    """Tuna API artist view"""
 
     def retrieve(self, request, pk):
         """Handle GET requests for single artist
@@ -74,7 +74,7 @@ class ArtistView(ViewSet):
 
 
 class ArtistSerializer(serializers.ModelSerializer):
-    """JSON serializer for events
+    """JSON serializer for artists
     """
     class Meta:
         model = Artist

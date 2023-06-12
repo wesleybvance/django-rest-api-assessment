@@ -7,7 +7,7 @@ from tunaapi.models import Song, Artist, Genre, SongGenre
 
 
 class SongView(ViewSet):
-    """Level up songs view"""
+    """Tuna API songs view"""
 
     def retrieve(self, request, pk):
         """Handle GET requests for single song
@@ -49,7 +49,7 @@ class SongView(ViewSet):
             album=request.data["album"],
             length=request.data["length"]
         )
-        serializer = SongSerializer(Song)
+        serializer = SongSerializer(song)
         return Response(serializer.data)
 
     def update(self, request, pk):
@@ -60,7 +60,7 @@ class SongView(ViewSet):
         """
 
         song = Song.objects.get(pk=pk)
-        song.title = request.data["description"]
+        song.title = request.data["title"]
         song.album = request.data["album"]
         song.length = request.data["length"]
         song.artist_id = Artist.objects.get(pk=request.data["artistId"])
