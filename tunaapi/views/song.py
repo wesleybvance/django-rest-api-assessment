@@ -86,7 +86,7 @@ class SongView(ViewSet):
         genre = Genre.objects.get(pk=pk)
         song = Song.objects.get(pk=pk)
         songgenre = SongGenre.objects.create(
-            genre_id=genre,
+            genre=genre,
             song_id=song
         )
         return Response({'message': 'Genre added'}, status=status.HTTP_201_CREATED)
@@ -105,10 +105,18 @@ class SongView(ViewSet):
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
 
+class SongGenreSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SongGenre
+        fields = ( 'genre', )
+        depth = 1
+
+
 class SongSerializer(serializers.ModelSerializer):
     """JSON serializer for songs
     """
+    genres = SongGenreSerializer(many=True)
     class Meta:
         model = Song
-        fields = ('id', 'title', 'artist_id', 'album', 'length')
+        fields = ('id', 'title', 'artist_id', 'album', 'length', 'genres')
         depth = 1
